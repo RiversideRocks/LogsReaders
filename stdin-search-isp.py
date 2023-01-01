@@ -22,4 +22,4 @@ for line in sys.stdin:
         except:
             print()
         stor.append(entry.remote_host)
-        print("== " + str(len(stor)) + " Unique Hits ==")
+        #print("== " + str(len(stor)) + " Unique Hits ==")
