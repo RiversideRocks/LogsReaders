@@ -18,6 +18,9 @@ for line in sys.stdin:
             api = requests.get('https://whois-referral.toolforge.org/gateway.py?lookup=true&format=json&ip=' + entry.remote_host).json()
             for x in api["nets"]["emails"]:
                 if ".gov" in x:
+                    with open('govips.txt', 'a') as g:
+                        g.write(str(line) + "\n")
+                        g.close()
                     print(line)
         except:
             print()
