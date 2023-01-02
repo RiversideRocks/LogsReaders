@@ -17,7 +17,7 @@ for line in sys.stdin:
         try:
             api = requests.get('https://whois-referral.toolforge.org/gateway.py?lookup=true&format=json&ip=' + entry.remote_host).json()
             try:
-                print(entry.remote_host + " | " + api["geolite2"])
+                print(entry.remote_host + " | " + api["geolite2"] + " | " + api["nets"][0]["description"])
             except:
                 print(entry.remote_host + " | ???")
         except:
